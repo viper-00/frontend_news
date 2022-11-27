@@ -7,7 +7,7 @@
           <div class="col-12 text-center mt-5">
             <h2>Explore New Platforms</h2>
           </div>
-          <div class="col-12 mb-3">
+          <div class="col-12 mb-3 mt-5">
             <el-select v-model="optionsValue" placeholder="Select">
               <el-option
                 v-for="item in platformOptions"
@@ -20,15 +20,15 @@
           </div>
 
           <div
-            class="col-3 mb-5"
+            class="col-md-3 mb-5"
             v-for="(value, index) in platforms"
             :key="index"
           >
-            <div class="card" style="width: 18rem; padding: 10px">
+            <div class="card" style="padding: 10px;">
               <a
                 :href="value.website_url"
                 target="_blank"
-                style="padding: 10px"
+                style="padding: 10px; background: #edeff0;"
               >
                 <img
                   :src="value.logo_url"
@@ -37,6 +37,9 @@
                 />
               </a>
               <div class="card-body">
+                <p class="card_text">
+                  {{value.name}}
+                </p>
                 <p class="card-text">
                   {{ value.description }}
                 </p>
@@ -85,7 +88,7 @@ export default {
   },
   methods: {
     getPlatform() {
-      const url = "http://127.0.0.1:8888/api/v1/platforms";
+      const url = "https://api.nowcoin.info/api/v1/platforms";
 
       this.$axios
         .get(url)
@@ -100,7 +103,7 @@ export default {
         });
     },
     getBlockCategories() {
-      const url = "http://127.0.0.1:8888/api/v1/blockchain-categories";
+      const url = "https://api.nowcoin.info/api/v1/blockchain-categories";
       const self = this;
       self.$axios
         .get(url)

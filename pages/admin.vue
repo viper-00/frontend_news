@@ -178,7 +178,7 @@ export default {
       const self = this;
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          const url = "http://127.0.0.1:8888/api/v1/article";
+          const url = "https://api.nowcoin.info/api/v1/article";
           this.$axios
             .post(
               url,
@@ -222,7 +222,7 @@ export default {
       const self = this;
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          const url = "http://127.0.0.1:8888/api/v1/platform";
+          const url = "https://api.nowcoin.info/api/v1/platform";
           this.$axios
             .post(
               url,
@@ -263,7 +263,7 @@ export default {
       console.log(value);
     },
     getBlockCategories() {
-      const url = "http://127.0.0.1:8888/api/v1/blockchain-categories";
+      const url = "https://api.nowcoin.info/api/v1/blockchain-categories";
       const self = this;
       self.$axios
         .get(url)

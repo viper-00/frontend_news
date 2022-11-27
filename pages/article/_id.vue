@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     getArticle(id) {
-      const url = "http://127.0.0.1:8888/api/v1/article";
+      const url = "https://api.nowcoin.info/api/v1/article";
       this.$axios
         .get(url, {
           params: {
